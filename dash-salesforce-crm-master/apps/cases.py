@@ -82,6 +82,7 @@ def cases_by_period(df, period, priority, origin):
 
     # period filtering
     df["CreatedDate"] = pd.to_datetime(df["CreatedDate"], format="%Y-%m-%d")
+    
     if period == "W-MON":
         df["CreatedDate"] = pd.to_datetime(df["CreatedDate"]) - pd.to_timedelta(7, unit="d")
     
