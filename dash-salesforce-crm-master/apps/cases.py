@@ -683,7 +683,8 @@ def cases_account_callback(df):
     return cases_by_account(df)
 
 
-@app.callback(Output("cases_modal", "style"), [Input("new_case", "n_clicks")])
+@app.callback(Output("cases_modal", "style"), 
+    [Input("new_case", "n_clicks")])
 def display_cases_modal_callback(n):
     if n > 0:
         return {"display": "block"}
@@ -692,7 +693,8 @@ def display_cases_modal_callback(n):
 
 @app.callback(
     Output("new_case", "n_clicks"),
-    [Input("cases_modal_close", "n_clicks"), Input("submit_new_case", "n_clicks")],
+    [Input("cases_modal_close", "n_clicks"), 
+    Input("submit_new_case", "n_clicks")],
 )
 def close_modal_callback(n, n2):
     return 0
